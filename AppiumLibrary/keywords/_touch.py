@@ -77,10 +77,7 @@ class _TouchKeywords(KeywordGroup):
         x_offset = x_end - x_start
         y_offset = y_end - y_start
         platform = self._get_platform()
-        if platform == 'android':
-            self.swipe(x_start, y_start, x_end, y_end, duration)
-        else:
-            self.swipe(x_start, y_start, x_offset, y_offset, duration)
+        self.swipe(x_start, y_start, x_end, y_end, duration)
 
     def scroll(self, start_locator, end_locator):
         """
