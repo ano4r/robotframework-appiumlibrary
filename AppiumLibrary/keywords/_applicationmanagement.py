@@ -186,7 +186,7 @@ class _ApplicationManagementKeywords(KeywordGroup):
             else:
                 return ''
 
-    def execute_script(self, script):
+    def execute_script(self, script, **kwargs):
         """
         Inject a snippet of JavaScript into the page for execution in the
         context of the currently selected frame (Web context only).
@@ -196,9 +196,9 @@ class _ApplicationManagementKeywords(KeywordGroup):
 
         New in AppiumLibrary 1.5
         """
-        return self._current_application().execute_script(script)
+        return self._current_application().execute_script(script, kwargs)
 
-    def execute_async_script(self, script):
+    def execute_async_script(self, script, **kwargs):
         """
         Inject a snippet of Async-JavaScript into the page for execution in the
         context of the currently selected frame (Web context only).
@@ -212,7 +212,7 @@ class _ApplicationManagementKeywords(KeywordGroup):
 
         New in AppiumLibrary 1.5
         """
-        return self._current_application().execute_async_script(script)
+        return self._current_application().execute_async_script(script, kwargs)
 
     def go_back(self):
         """Goes one step backward in the browser history."""
